@@ -1,0 +1,19 @@
+{
+  "name": "validity-validate-if",
+  "version": "1.0.0",
+  "description": "Validity style conditional validator",
+  "main": "validator.js",
+  "repository": "git@github.com:jack828/validity-validate-if.git",
+  "author": "Jack Burgess <jackburgess124@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha test",
+    "prepublish": "mocha test"
+  },
+  "files": ["validator.js"],
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "validity": "^1.1.1",
+    "validity-required": "^1.0.0"
+  }
+}
