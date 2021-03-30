@@ -31,6 +31,7 @@ describe('validity-validate-if', function() {
       'secondProperty',
       'Second Property',
       obj,
+      {},
       function(err, message) {
         assert.equal(undefined, message)
         done()
@@ -46,6 +47,7 @@ describe('validity-validate-if', function() {
       'secondProperty',
       'Second Property',
       obj,
+      {},
       function(err, message) {
         assert.equal('Second Property is required', message)
         done()
@@ -61,6 +63,24 @@ describe('validity-validate-if', function() {
       'secondProperty',
       'Second Property',
       obj,
+      {},
+      function(err, message) {
+        assert.equal(undefined, message)
+        done()
+      }
+    )
+  })
+
+  it('should provide parent as an argument', function(done) {
+    var obj = { property: 'set', secondProperty: '' }
+    createValidator((propertyValue, object, parent) => {
+        assert.equal(parent.value, true)
+      return false
+    }, required)(
+      'secondProperty',
+      'Second Property',
+      obj,
+      { value: true },
       function(err, message) {
         assert.equal(undefined, message)
         done()

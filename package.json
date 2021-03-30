@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "test": "mocha test",
-    "prepublish": "mocha test"
+    "prepublish": "mocha test",
+    "run-test": "mocha $@"
   },
   "files": ["validator.js"],
   "devDependencies": {

@@ -5,8 +5,8 @@ module.exports = function validateIf(comparator, validateFn) {
   if (!validateFn || typeof validateFn !== 'function') {
     throw new Error('No validator provided')
   }
-  return function validate(key, keyDisplayName, object, cb) {
-    if (comparator(object[key], object)) {
+  return function validate(key, keyDisplayName, object, parent, cb) {
+    if (comparator(object[key], object, parent)) {
       return validateFn(key, keyDisplayName, object, cb)
     }
 

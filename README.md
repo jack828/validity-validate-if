@@ -53,6 +53,39 @@ const schema = schemata({
 })
 ```
 
+If you are performing validation within a subschema, the parent object is provided in the third argument to the comparator:
+
+
+```javascript
+const schemata = require('schemata')
+const validateIf = require('validity-validate-if')
+const anotherValidator = require('validity-validate-something-else')
+
+const comparator = (property, obj, parent) => property.length !== 42 && parent.source === 'GitHub'
+
+const childSchema = schemata({
+  name: 'SchemaChild',
+  properties: {
+    property: {
+      type: String,
+      validators: { all: [ validateIf(comparator, required) ] }
+    }
+  }
+})
+
+const schema = schemata({
+  name: 'SchemaParent',
+  properties: {
+    children: {
+      type: childSchema
+    },
+    source: {
+      type: String
+    }
+  }
+})
+```
+
 ## Credits
 
 [Jack Burgess](https://github.com/jack828)
