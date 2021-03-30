@@ -1,6 +1,6 @@
 {
   "name": "validity-validate-if",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Validity style conditional validator",
   "main": "validator.js",
   "repository": "git@github.com:jack828/validity-validate-if.git",
@@ -11,7 +11,9 @@
     "prepublish": "mocha test",
     "run-test": "mocha $@"
   },
-  "files": ["validator.js"],
+  "files": [
+    "validator.js"
+  ],
   "devDependencies": {
     "mocha": "^6.2.2",
     "validity": "^1.1.1",
