@@ -4,7 +4,7 @@ Conditional validity validator
 ## Installation
 
 ```
-yarn add validity-validate-if
+yarn add @clocklimited/validity-validate-if
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ Below is an example usage with schemata:
 
 ```javascript
 const schemata = require('schemata')
-const validateIf = require('validity-validate-if')
+const validateIf = require('@clocklimited/validity-validate-if')
 const anotherValidator = require('validity-validate-something-else')
 
 const comparator = property => property.length !== 42
@@ -34,7 +34,7 @@ Optionally, if you need to validate against another property in the schema, the 
 
 ```javascript
 const schemata = require('schemata')
-const validateIf = require('validity-validate-if')
+const validateIf = require('@clocklimited/validity-validate-if')
 const anotherValidator = require('validity-validate-something-else')
 
 const comparator = (property, obj) => property.length !== 42 && obj.source === 'GitHub'
@@ -58,7 +58,7 @@ If you are performing validation within a subschema, the parent object is provid
 
 ```javascript
 const schemata = require('schemata')
-const validateIf = require('validity-validate-if')
+const validateIf = require('@clocklimited/validity-validate-if')
 const anotherValidator = require('validity-validate-something-else')
 
 const comparator = (property, obj, parent) => property.length !== 42 && parent.source === 'GitHub'

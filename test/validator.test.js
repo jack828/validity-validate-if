@@ -1,5 +1,5 @@
 const createValidator = require('../')
-const required = require('validity-required')
+const required = require('@clocklimited/validity-required')
 const assert = require('assert')
 
 describe('validity-validate-if', function() {
